@@ -18,3 +18,8 @@ jobs:
       run: |
         npm install -g html-validate
         html-validate --verbose .
+    
+    - name: Deploy to Production
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        # Your deployment commands go here
